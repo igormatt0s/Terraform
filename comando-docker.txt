@@ -1,0 +1,15 @@
+# Iniciar um container:
+
+docker container run -it --name terraform -v $(pwd):/mnt/curso-terraform --entrypoint /bin/sh hashicorp/terraform
+
+
+
+# Remover o container que foi criado anteriormente:
+
+docker container stop terraform && docker container rm terraform
+
+
+
+# Iniciar um container configurando para que seja automaticamente removido quando sair dele:
+
+docker container run -it --rm --name terraform -v $(pwd):/mnt/curso-terraform --entrypoint /bin/sh hashicorp/terraform
